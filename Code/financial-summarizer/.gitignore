@@ -1,0 +1,59 @@
+# Project structure specific ignores
+instance/
+input/
+output/
+vector_store/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+venv/
+.env/
+.env/*
+!.env/.gitkeep
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+financial_processor.log
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Local development
+local_settings.py
+settings/local.py
+
+# Build/compiled files
+build/
+dist/
+*.egg-info/
+*.egg

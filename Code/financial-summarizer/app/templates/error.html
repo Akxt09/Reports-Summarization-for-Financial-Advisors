@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Financial Analyzer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --error-bg: #f8f0f0;
+            --error-border: #e6ccd1;
+            --error-text: #842029;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .error-container {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background-color: var(--error-bg);
+            border-radius: 1rem;
+            border-left: 5px solid var(--error-text);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .error-icon {
+            font-size: 5rem;
+            color: var(--error-text);
+            margin-bottom: 1rem;
+        }
+        
+        .error-title {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--error-text);
+        }
+        
+        .error-details {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--error-border);
+            border-radius: 0.5rem;
+        }
+        
+        .error-message {
+            font-family: monospace;
+            padding: 1rem;
+            background-color: rgba(220, 53, 69, 0.05);
+            border-radius: 0.25rem;
+            word-wrap: break-word;
+        }
+        
+        .action-btn {
+            padding: 0.6rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .action-btn i {
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            margin-top: 3rem;
+            padding: 1rem 0;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-graph-up"></i> Financial Analyzer
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="bi bi-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact"><i class="bi bi-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Error Content -->
+    <div class="container">
+        <div class="error-container">
+            <div class="text-center">
+                <i class="bi bi-exclamation-triangle-fill error-icon"></i>
+                <h1 class="error-title">Oops! Something went wrong</h1>
+            </div>
+            
+            <div class="alert alert-danger error-details" role="alert">
+                <h4 class="alert-heading"><i class="bi bi-info-circle"></i> Error Details</h4>
+                <div class="error-message">
+                    <!-- Use safe filter to prevent HTML escaping -->
+                    {{ error|safe if error else "An unexpected error occurred." }}
+                </div>
+                <hr>
+                <p class="mb-0">
+                    <i class="bi bi-lightbulb"></i> 
+                    If this problem persists, please try refreshing the page or contact our support team.
+                </p>
+            </div>
+            
+            <div class="text-center mt-4 d-flex justify-content-center">
+                <a href="/" class="btn btn-primary action-btn">
+                    <i class="bi bi-house-door"></i> Return Home
+                </a>
+                <button onclick="window.history.back()" class="btn btn-outline-secondary action-btn">
+                    <i class="bi bi-arrow-left"></i> Go Back
+                </button>
+            </div>
+        </div>
+        
+        <!-- Support Contact -->
+        <div class="text-center mt-4">
+            <p>Need help? <a href="/contact" class="text-decoration-none">Contact our support team</a></p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 Financial Analyzer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
